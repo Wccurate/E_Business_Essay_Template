@@ -1,0 +1,237 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{xeCJK}
+\setmainfont{Times New Roman}
+% \setCJ Kmainfont{SimSun}
+% \setmainfont{TNR.ttf}[
+%     Path=./,
+%     Extension=.ttf
+% ]
+% \setCJKmainfont{STSong.ttf}[
+%     Path=./,
+%     Extension=.ttf
+% ]
+\usepackage{graphicx}      
+\usepackage{array}       
+\usepackage{multicol}    
+\usepackage{xeCJK}       
+\usepackage{tabularx}    
+\usepackage{hhline}
+\usepackage{xcolor}   
+\usepackage[left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm]{geometry}
+\usepackage{colortbl} 
+\usepackage{tocloft}
+\usepackage{multirow}
+\usepackage{booktabs}
+\definecolor{lightblue}{RGB}{220, 230, 241}
+\definecolor{lightgreen}{RGB}{204, 255, 204}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{hyperref}
+% \geometry{a4paper}
+\usepackage{appendix} 
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}} 
+\usepackage{amsmath}
+\usepackage{amsthm}        
+\usepackage{subfig}          
+\usepackage{float}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{caption}
+\captionsetup{font={small,bf}} 
+\newtheorem{definition}{定义} 
+\newtheorem{lemma}{引理}
+\newtheorem{theorem}{定理}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Rank}{rank}
+\renewcommand\arraystretch{1.35}
+\titleformat{\section}
+  {\centering\heiti\Large}
+  {}
+  {0pt}
+  {}
+\renewcommand{\cftsecfont}{\heiti\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\begin{document}
+
+\include{cover_final.tex}
+\newpage
+\pagestyle{fancy}
+\fancyhead[L]{\textcolor{gray!70}{电子商务入门（作业）}}
+\fancyhead[R]{\textcolor{gray!70}{}}
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\headrule}{\color{gray!70}\hrule width\headwidth height\headrulewidth}
+
+\newcommand{\enabstractname}{\fontsize{18pt}{18pt}\selectfont ABSTRACT}
+\newcommand{\cnabstractname}{\heiti \fontsize{18pt}{18pt}\selectfont 摘要}
+\newenvironment{enabstract}{
+  \vspace*{0.5cm}
+  \par\Large
+  \noindent\mbox{}\hfill{\bfseries \enabstractname}\hfill\mbox{}\par
+  \vskip 2.5ex}{\par\vskip 2.5ex}
+\newenvironment{cnabstract}{
+  \vspace*{0.5cm}
+  \par\Large
+  \noindent\mbox{}\hfill{\bfseries \cnabstractname}\hfill\mbox{}\par
+  \vskip 2.5ex}{\par\vskip 2.5ex}
+
+
+\begin{cnabstract}
+\addcontentsline{toc}{section}{摘要}
+ \thispagestyle{plain}
+ \thispagestyle{fancy}
+\vspace*{0.5cm}
+\noindent
+{\fontsize{12pt}{12pt}\selectfont 本 \LaTeX 模板专为上海大学《电子商务入门》课程报告设计，旨在帮助同学们快速、美观地完成课程报告。模板结构清晰，包含封面、目录、摘要、正文、参考文献等部分，并预设了常用的排版格式。推荐使用 Overleaf 在线编辑器和 XeLaTeX 编译引擎，以获得最佳的排版效果和中文支持。}\\ \\
+{\fontsize{12pt}{12pt}\selectfont \noindent \textbf{关键词: } \LaTeX，电子商务入门，Overleaf，XeLaTeX}
+\end{cnabstract}
+\pagenumbering{Roman}
+
+\newpage
+\addcontentsline{toc}{section}{ABSTRACT}
+ \thispagestyle{plain}
+  \thispagestyle{fancy}
+\vspace*{0.5cm}
+\begin{enabstract}
+\noindent
+{\fontsize{12pt}{12pt}\selectfont This \LaTeX template is specifically designed for the course report of "Introduction to E-commerce" at Shanghai University. It aims to help students complete their course reports quickly and beautifully. The template has a clear structure, including cover, table of contents, abstract, body, references, etc., and presets commonly used typesetting formats. It is recommended to use the Overleaf online editor and the XeLaTeX compilation engine for optimal typesetting and Chinese language support.} \\ \\
+\noindent
+{\fontsize{12pt}{12pt}\selectfont \textbf{Keywords:} \LaTeX, Introduction to E-commerce, Overleaf, XeLaTeX}
+\clearpage
+\end{enabstract}
+
+
+\addcontentsline{toc}{section}{目录}
+\tableofcontents
+\thispagestyle{plain}
+ \thispagestyle{fancy}
+\clearpage
+\pagenumbering{arabic}
+
+\section{引言}
+
+本模板旨在提供一个基础的\LaTeX{}框架，使用户可以专注于内容创作，而无需花费过多时间在格式调整上。\LaTeX{} 是一种强大的排版系统，特别适用于学术论文、技术报告和数学公式的书写。
+
+\subsection{为什么使用 \LaTeX{}？}
+\LaTeX{} 相较于传统的文字处理软件（如 Word），具有以下优势：
+\begin{itemize}
+    \item \textbf{高质量排版}：特别适合数学公式、表格和文献管理。
+    \item \textbf{自动编号和引用}：方便管理章节、公式、图表和参考文献。
+    \item \textbf{模板化}：一旦设定格式，后续编辑内容时无需反复调整排版。
+\end{itemize}
+
+\subsection{如何快速学习 \LaTeX{}？}
+如果你是初学者，可以按照以下步骤快速入门：
+\begin{enumerate}
+    \item \textbf{在线编辑}：推荐使用 \href{https://www.overleaf.com}{Overleaf}，无需安装，即可在线编写和编译 \LaTeX{} 文档。
+    \item \textbf{基本语法}：建议学习基础语法，如章节结构（\verb|\section|, \verb|\subsection|）、数学公式（\verb|$...$|）和参考文献（\verb|\cite{}|）。
+    \item \textbf{官方文档与教程}：
+        \begin{itemize}
+            \item \href{https://www.latex-project.org}{\LaTeX{} 官方网站}
+            \item \href{https://www.ctan.org}{CTAN（\LaTeX{} 宏包库）}
+            \item \href{https://tug.org}{TUG（\TeX{} 用户组）}
+        \end{itemize}
+    \item \textbf{示例代码}：阅读本模板的示例代码，尝试修改和运行，逐步熟悉 \LaTeX{} 的用法。
+\end{enumerate}
+
+\subsection{如何使用本模板？}
+\begin{enumerate}
+    \item 下载并解压本模板文件。
+    \item 使用 \TeX{} 编辑器（如 \textbf{TeXworks, TeXstudio, Overleaf}）打开 \texttt{E\_Bussiness.tex}。
+    \item 在指定区域添加你的内容，如标题、摘要、章节等。
+    \item 运行编译（推荐\textbf{XeLaTeX}），生成 PDF 文件。
+\end{enumerate}
+
+\section{表格}
+模板中关于表格的宏包有三个: booktabs、array 和 longtabular. 三线表可
+以用 booktabs 提供的 toprule、midrule 和 bottomrule. 它们与
+longtable 能很好的配合使用.
+\begin{table}[htb]
+  \centering
+  \begin{minipage}[t]{0.8\linewidth} 
+  \caption[模板文件]{模板文件}
+  \label{tab:template-files}
+    \begin{tabularx}{\linewidth}{lX}
+      \toprule[1.5pt]
+      {\heiti 文件名} & {\heiti 描述} \\\midrule[1pt]
+      *.ins  & \LaTeX{} 安装文件, \textsc{DocStrip}.\footnote{表格中的脚注} \\
+      *.dtx  & 所有的一切都在这里面.\\
+      *.cls  & 模板类文件. \\
+      *.cfg  & 模板配置文.\\
+      *.bst  & 参考文献 BIB\TeX\ 样式文件.\\
+      *.sty  & 常用的包和命令.\\
+      \bottomrule[1.5pt]
+    \end{tabularx}
+  \end{minipage}
+\end{table}
+
+
+\section{插图}
+论文里插图可使用 \texttt{graphicx} 宏包. 
+
+\begin{figure}[!htbp]
+\centering
+    \includegraphics[scale=0.1]{imgs/shulogo.png}
+    \caption{上海大学 logo}
+\end{figure}
+
+\section{数学宏包}
+\LaTeX\ 最擅长处理的就是数学公式, 包括:
+\begin{itemize}
+\item 美国数学学会系列宏包: \texttt{amsmath}, \texttt{amssymb}, \texttt{amsfonts}.
+\item 生成英文花体的宏包: \texttt{mathrsfs}.
+\item 数学公式中的黑斜体的宏包: \texttt{bm}.
+\item AMS 的补充宏包: \texttt{mathtools}.
+\end{itemize}
+
+\section{定理类环境}
+给大家演示一下各种定理类环境.
+
+\subsection{定理类环境}
+
+\begin{lemma}
+证明如下等式:
+\[
+\sum_{n=1}^{\infty}\frac{n-1}{\binom{2n}{n}}=\frac{1}{3}.
+\]
+\end{lemma}
+
+\begin{proof}
+注意到下面的恒等式:
+\[
+\frac{1}{\binom{2n}{n}}=(2n+1)\int_0^1[x(1-x)]^n\,dx,
+\]
+和
+\[
+\sum_{n=1}^{\infty}(2n+1)(n-1)y^n=\frac{(y-5)y^2}{(y-1)^3}.
+\]
+记 $y=x(1-x)$, 则
+\[
+\sum_{n=1}^{\infty}(2n+1)(n-1)x^n(1-x)^n=\frac{(x-x^2-5)(x-x^2)^2}{(x-x^2-1)^3}.
+\]
+所以有
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{n-1}{\binom{2n}{n}} & =
+\int_0^1\left[\sum_{n=1}^{\infty}(2n+1)(n-1)x^n(1-x)^n\right]dx\\
+& =\int_0^1\frac{(x-x^2-5)(x-x^2)^2}{(x-x^2-1)^3}dx=\frac13.
+\end{align*}
+\end{proof}
+
+\begin{theorem}\label{the:theorem1}
+一元五次方程没有一般的代数解.
+\end{theorem}
+\section{参考文献}
+本模板推荐使用 \textbf{BibTeX}。看看这个例子: 单独引用~\cite{Li_2024_CVPR}, 多引用~\cite{Li_2024_CVPR,Peng_2024_CVPR,Xu_2024_CVPR,Yang_2024_CVPR}。
+
+\newpage
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{reference.bib}
+
+\end{document}
